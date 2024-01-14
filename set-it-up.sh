@@ -28,13 +28,7 @@ source $this_lib_path/setups/projects/vanillajs.sh
 source $this_lib_path/setups/projects/webpack.sh
 source $this_lib_path/exit-phrase.sh
 
-actuallyRunProgram=""
-
-read -p "Whaooo are you actually trying to run the program? (y/N)" actuallyRunProgram
-
-if [[ $actuallyRunProgram == "y" || $actuallyRunProgram == "Y" ]]; then
-    setup_clientInformation
-fi
+setup_clientInformation
 
 exitPhrase
 
