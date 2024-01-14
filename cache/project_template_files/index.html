@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"
+    dir="ltr">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>[project_name]</title>
+
+        <!-- General Application Meta Data -->
+        <meta http-equiv="Content-Security-Policy"
+            content="base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; default-src 'self'; form-action 'self'; upgrade-insecure-requests ">
+        <meta http-equiv="X-UA-Compatible"
+            content="IE=edge">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <meta name="application-name"
+            content="[project_name]">
+        <meta name="application-url"
+            content="[project_url]">
+        <meta name="creator"
+            content="[client_name]">
+        <meta name="keywords"
+            content="[project_keywords]">
+        <meta name="description"
+            content="[project_description]">
+        <meta name="theme-color"
+            content="[project_colour]">
+        <meta name="robots"
+            content="index, follow, max-snippet:30">
+        <meta name="thumbnail"
+            content="./storage/icons/[project_name]-Logo-1080.png">
+
+        <!--Open Graph Protocol Meta Data-->
+        <meta property="og:title"
+            content="[project_name]">
+        <meta property="og:type"
+            content="website">
+        <meta property="og:url"
+            content="[project_url]">
+        <meta property="og:description"
+            content="[project_description].">
+        <meta property="og:locale"
+            content="[project_locale]">
+        <meta property="og:site_name"
+            content="[project_name]">
+
+        <!--Apple macOS/iOS-->
+        <link type="image/png"
+            rel="apple-touch-icon"
+            href="./storage/icons/[project_name]-Logo-512.png">
+        <meta name="apple-mobile-web-app-status-bar"
+            content="[project_colour]">
+        <meta name="apple-mobile-web-app-capable"
+            content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style"
+            content="[project_colour]">
+        <meta name="apple-mobile-web-app-title"
+            content="[project_name]">
+        <meta name="format-detection"
+            content="telephone=no">
+        <meta name="format-detection"
+            content="address=no">
+
+        <!--Google ChromeOS-->
+        <meta name="mobile-web-application-capable"
+            content="yes">
+
+        <!--Microsoft Windows-->
+        <meta name="msapplication-TileColor"
+            content="[project_colour]">
+        <meta name="msapplication-TileImage"
+            content="./storage/icons/[project_name]-Logo-512.png">
+        <meta name="msapplication-tooltip"
+            content="[project_description_short]">
+
+        <!-- Application Icon -->
+        <link type="image/png"
+            type="image/png"
+            rel="icon"
+            href="./storage/icons/[project_name]-Logo-512.png">
+
+        <!-- Google Search JSONLD Structured Data (SEO) -->
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "SoftwareApplication",
+                "url" : "[project_url]",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "[project_jsonld_price]"
+                },
+                "applicationCategory": "[project_jsonld_category]",
+                "name": "[project_name]",
+                "operatingSystem":"[project_compatibleSystems]"
+            }
+        </script>
+
+        <!-- Application Scripts and Styles -->
+        <script type="module"
+            src="./js/[project_name].js"></script>
+
+        <script type="text/javascript"
+            defer
+            src="./sw.js"></script>
+
+        <link type="text/css"
+            rel="stylesheet"
+            href="./css/[project_name].css">
+
+        <link href=./manifest.json
+            rel=manifest>
+
+    <body>
+        <header>
+        </header>
+        <main>
+        </main>
+        <footer>
+        </footer>
+    </body>
+
+</html>

@@ -1,0 +1,51 @@
+{
+    "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+    "background_color": "[project_colour]",
+    "categories": [
+        "[project_keywords]"
+    ],
+    "display":"minimal-ui",
+    "name": "[project_name]",
+    "short_name": "[project_name_short]",
+    "start_url": "[project_url]",
+    "id": "/",
+    "prefer_related_applications": false,
+    "description": "[project_description]",
+    "icons": [
+        {
+        "src": "./storage/icons/[project_name]-Logo-1080.svg",
+        "sizes":"1080x1080",
+        "type": "image/svg+xml",
+        "purpose": "maskable"
+        },
+        {
+            "src": "./storage/icons/[project_name]-Logo-1080.svg",
+            "sizes":"1080x1080",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        },
+        {
+            "src": "./storage/icons/[project_name]-Logo-512.png",
+            "sizes":"512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "theme_color": "[project_colour]",
+    "screenshots": [
+        {
+            "form_factor": "wide",
+            "label": "[project_name] Wide",
+            "type": "image/jpg",
+            "sizes" : "1920x961",
+            "src": "./storage/screen_shots/[project_name]-wide.jpg"
+        },
+        {
+            "form_factor": "narrow",
+            "label": "[project_name] Narrow",
+            "type": "image/jpg",
+            "sizes" : "500x961",
+            "src": "./storage/screen_shots/[project_name]-narrow.jpg"
+        }
+    ]
+}

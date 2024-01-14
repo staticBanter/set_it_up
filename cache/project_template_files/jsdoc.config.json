@@ -1,0 +1,31 @@
+{
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "recurseDepth": 10,
+    "source": {
+        "includePattern": ".js",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "sourceType": "module",
+    "tags": {
+        "allowUnknownTags": false,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": true,
+        "default": {
+            "includeDate": false
+        }
+    },
+    "markdown": {
+        "idInHeadings": true
+    },
+    "opts": {
+        "destination": "./docs/html",
+        "package": "package.json",
+        "readme": "README.md",
+        "recurse": true
+    }
+}
