@@ -7,6 +7,30 @@
 this_script_path=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)
 this_lib_path="$this_script_path/lib"
 
+if [ "${this_script_path}" == "" ]; then
+
+    printf 'ERROR: Could not locate the path for this script... \n'
+    exit;
+
+elif [ "$this_script_path" == "/" ]; then
+
+    continueWithRootDirectoryPath=""
+
+    read -p '
+    WARNING: This scripts path is pointing to the ROOT (/) directory.
+    This could be dangerous!
+    Would you like to continue? (y/N)
+    ' continueWithRootDirectoryPath
+
+    if [[ "${continueWithRootDirectoryPath}" != "y" || "${continueWithRootDirectoryPath}" != "Y" ]]; then
+
+        printf "Cancelling setup...\n"
+        exit;
+
+    fi
+
+fi
+
 source $this_lib_path/globals/this.sh
 source $this_lib_path/globals/client.sh
 source $this_lib_path/globals/project.sh

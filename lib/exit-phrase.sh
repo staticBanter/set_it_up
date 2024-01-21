@@ -8,6 +8,7 @@ function exitPhrase()
     exitPhrases=(
         'Good luck on your new adventure'
         'Have fun with your new project'
+        'Make something great'
     )
 
     exitPhrasesLength=(${#exitPhrases[@]})
