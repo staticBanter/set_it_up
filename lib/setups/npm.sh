@@ -9,13 +9,15 @@ setup_npm()
 
     if [[ "${isProjectScoped}" == "y" || "${isProjectScoped}" == "Y" ]]; then
 
-        hasCustomScope=""
+        customScope=""
 
-        read -p "Do you have a custom NPM Scope? (y/N)" hasCustomScope
+        read -p "Enter your NPM repository scope name (default: @$client_name):" customScope
 
-        if [[ "${hasCustomScope}" == "y" || "${hasCustomScope}" == "Y" ]]; then
-            project_scope="@$client_name"
+        if [ "${customScope}" == "" ]; then
+            customScope="@$client_name"
         fi
+
+        project_scope="${customScope}"
 
     fi
 
