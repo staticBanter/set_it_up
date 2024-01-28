@@ -34,11 +34,13 @@ fi
 source $this_lib_path/globals/this.sh
 source $this_lib_path/globals/client.sh
 source $this_lib_path/globals/project.sh
+source $this_lib_path/exit-phrase.sh
 source $this_lib_path/setups/client-information.sh
 source $this_lib_path/setups/project-information.sh
 source $this_lib_path/setups/projects.sh
-source $this_lib_path/setups/readme.sh
 source $this_lib_path/setups/git.sh
+source $this_lib_path/setups/licensing.sh
+source $this_lib_path/setups/readme.sh
 source $this_lib_path/setups/npm.sh
 source $this_lib_path/setups/typescript.sh
 source $this_lib_path/setups/javascript.sh
@@ -50,7 +52,7 @@ source $this_lib_path/setups/front-end.sh
 source $this_lib_path/swap-template-file-variables.sh
 source $this_lib_path/setups/projects/vanillajs.sh
 source $this_lib_path/setups/projects/webpack.sh
-source $this_lib_path/exit-phrase.sh
+source $this_lib_path/setups/projects/vitejs.sh
 
 setup_clientInformation
 

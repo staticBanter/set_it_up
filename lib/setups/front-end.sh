@@ -47,6 +47,20 @@ setup_frontEnd_framework()
 setup_frontEnd()
 {
 
+    requires_frontEnd=""
+
+    read -p "Will your program have a front end user interface or be a web-application? (Y/n)"
+
+    if [[ "${requires_frontEnd}" == "n" ||  "${requires_frontEnd}" == "N" ]]; then
+        return;
+    fi
+
+    if [[ "${project_requires_npm}" != "n" || "${project_requires_npm}" != "N" ]]; then
+        setup_sass
+    else
+        setup_css
+    fi
+
     read -p "Enter the Monetary Price you will be charging for your project (default: $project_jsonld_default_price): " project_jsonld_price
 
     if [ "${project_jsonld_price}" == "" ]; then
@@ -68,6 +82,7 @@ setup_frontEnd()
     if [ -e "./package.json" ]; then
 
         sed -e 1a\ " \  \"browser\": \"web\/js\/$project_name.js\"," -i "./package.json"
+
         sed -i s/"\"main\": \"js\/set_me_up_project.js\","/"\"main\": \"web\/js\/$project_name.js\","/ "./package.json"
 
     fi

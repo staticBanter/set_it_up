@@ -16,6 +16,9 @@ project_scope=""
 project_jsonld_price=""
 project_jsonld_category=""
 project_jsonld_compatibleSystems=""
+project_typescript_target=""
+project_requires_npm=""
+project_requires_testingTools=""
 
 # Defualt variable values.
 

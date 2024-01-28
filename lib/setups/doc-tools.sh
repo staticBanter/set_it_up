@@ -2,6 +2,13 @@
 
 setup_docTools()
 {
+    requires_docTools=""
+
+    read -p "Will you be using any assistive code documentation tooling? (Y/n)" requires_docTools
+
+    if [[ "${requires_docTools}" == "n" || "${requires_docTools}" == "N" ]]; then
+        return
+    fi
 
     npm install --save-dev jsdoc
 
@@ -12,6 +19,7 @@ setup_docTools()
     fi
 
     sed -i s/"\"scripts\": {"/"\"scripts\": {\n    \"docs-build\": \"jsdoc .\/js\/ --tutorials .\/docs --configure .\/jsdoc.config.json\","/ "./package.json"
+
     sed -i s/"\"production\": \""/"\"production\": \"npm run docs-build \&\& "/ "./package.json"
 
     customJSDocTemplate=""

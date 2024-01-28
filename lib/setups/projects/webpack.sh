@@ -8,8 +8,11 @@ setup_project_webpack()
     npm install --save-dev webpack copy-webpack-plugin terser-webpack-plugin
 
     sed -i s/"\"scripts\": {"/"\"scripts\": {\n    \"webpack-build\": \"webpack build \-\-profile \-\-json\=webpack.profile.json \-\-env production \-\-config webpack.config.js\","/ "./package.json"
+
     sed -i s/"\"scripts\": {"/"\"scripts\": {\n    \"webpack-dev-build\": \"webpack build \-\-env development \-\-config webpack.config.js\","/ "./package.json"
+
     sed -i s/"\"scripts\": {"/"\"scripts\": {\n    \"webpack-watch\": \"webpack build \-\-env development \-\-config webpack.config.js \-\-watch\","/ "./package.json"
+
     sed -i s/"\"scripts\": {"/"\"scripts\": {\n    \"start\": \"webpack serve\","/ "./package.json"
 
     sed -i s/"\"production\": \""/"\"production\": \"npm run webpack-build \&\& "/ "./package.json"

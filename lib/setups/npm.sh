@@ -3,6 +3,12 @@
 setup_npm()
 {
 
+    read -p "Would you like to initialize NPM? (Y/n)" project_requires_npm
+
+    if [[ "${project_requires_npm}" == "n" || "${project_requires_npm}" == "N" ]]; then
+        return;
+    fi
+
     isProjectScoped=""
 
     read -p "Would you like your project to be scoped? (y/N)" isProjectScoped
@@ -38,10 +44,18 @@ setup_npm()
     done
 
     sed -i s/"\"version\": \"1.0.0\","/"\"version\": \"$project_version\","/ "./package.json"
+
     sed -i s/"\"description\": \"$project_name \=\""/"\"description\": \"$project_description\""/ "./package.json"
+
     sed -i s/"\"main\": \"index.js\""/"\"main\": \"js\/$project_name.js\""/ "./package.json"
 
-    sed -i -f "$this_lib_path/sed/package.json.sed.sh" "./package.json"
+    sed -i s/'"scripts": {'/"\"scripts\": {\n    \"production\": \"\",\n    \"prod\": \"npm run production\","/ "./package.json"
+
+    sed -e 1a\ " \  \}," -i "./package.json"
+
+    sed -e 1a\ " \  \"private\": true," -i "./package.json"
+
+    sed -e 1a\ " \  \"type\": \"module\"," -i "./package.json"
 
     if [ ! -e "./.npmignore" ]; then
         if [ -a "$this_program_cache_dirPath/project_template_files/.npmignore" ]; then

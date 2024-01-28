@@ -29,7 +29,6 @@ function swapTemplateFileVariables()
 
                 projectKeywordsIndex=0
 
-
                 for keyword in $project_keywords; do
 
                     if [ $projectKeywordsIndex == 0 ]; then
@@ -43,10 +42,6 @@ function swapTemplateFileVariables()
                 done
 
             else
-
-                # replacement="${file_variable_replacements[$file_variable]}"
-
-                # sed -i s/"$file_variable"/"$replacement"/ "./$1"
 
                 sed -i s/"$file_variable"/"${file_variable_replacements[$file_variable]}"/ "./$1"
 

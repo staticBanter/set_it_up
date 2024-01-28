@@ -19,6 +19,13 @@ function create_githubDocs()
 
 function setup_git()
 {
+    requires_git=""
+
+    read -p "Will you be using Git for version control? (Y/n)" requires_git
+
+    if [[ "${requires_git}" == "n" || "${requires_git}" == "N" ]]; then
+        return;
+    fi
 
     git init
 

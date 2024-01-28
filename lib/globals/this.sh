@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# this_script_path=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)
-# this_lib_path="$this_script_path/../../lib"
-
 this_program_name="setItUp"
 this_program_dirName="set_it_up"
 
@@ -18,6 +15,6 @@ this_project_languages="JavaScript-TypeScript"
 # this_project_languages="JavaScript-TypeScript PHP Python"
 
 declare -A this_project_frameworks
-this_project_frameworks["JavaScript-TypeScript"]="VanillaJS Webpack Vite"
+this_project_frameworks["JavaScript-TypeScript"]="VanillaJS Webpack ViteJS"
 # this_project_frameworks["PHP"]="VanillaPHP Laravel"
 # this_project_frameworks["Python"]="VanillaPy Flask"
