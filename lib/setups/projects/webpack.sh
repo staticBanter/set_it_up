@@ -100,6 +100,6 @@ setup_project_webpack()
 
     fi
 
-    cd "../../../../"
+    cd "../../../"
 
 }
