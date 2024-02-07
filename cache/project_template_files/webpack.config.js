@@ -82,7 +82,7 @@ export default (env) => [
     },
     // Website Config
     {
-        context: path.resolve('site/src'),
+        context: path.resolve('web/src'),
         name: "web",
         entry: {
             site: {
@@ -91,7 +91,7 @@ export default (env) => [
         },
         devServer: {
             static: {
-                directory: './site/prod',
+                directory: './web/public',
                 staticOptions: {
                     extensions: ['html'],
                 }
@@ -112,7 +112,7 @@ export default (env) => [
             magicHtml: false,
         },
         output: {
-            path: path.resolve('site/prod'),
+            path: path.resolve('web/public'),
             filename: "main.js",
             module: true,
             libraryTarget: 'module',
@@ -140,7 +140,7 @@ export default (env) => [
                 patterns: [
                     {
                         from: "./manifest.json",
-                        to: "../prod/manifest.json",
+                        to: "../public/manifest.json",
                         transform(content) {
                             return content
                                 .toString()
