@@ -51,7 +51,7 @@ setup_npm()
 
     sed -i s/'"scripts": {'/"\"scripts\": {\n    \"production\": \"\",\n    \"prod\": \"npm run production\","/ "./package.json"
 
-    sed -e 1a\ " \  \}," -i "./package.json"
+    # sed -e 1a\ " \  \}," -i "./package.json"
 
     sed -e 1a\ " \  \"private\": true," -i "./package.json"
 
