@@ -100,6 +100,11 @@ setup_frontEnd()
 
     if [ -d "./ts" ]; then
         mv -n "./ts" "./src"
+
+        if [ -e "./tsconfig.json" ]; then
+            sed s/"\"rootDir\": \"ts\""/"\"rootDir\": \"src\/ts\""/ -i "./tsconfig.json"
+        fi
+
     fi
 
     if [ -d "./scss" ]; then
