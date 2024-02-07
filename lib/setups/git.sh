@@ -48,11 +48,11 @@ function setup_git()
         fi
     fi
 
-    addAdditionalDocumentation=""
+    additionalDocumentation=""
 
     read -p "Would you like to Add Additional Documentation to your project? (Y/n)" additionalDocumentation
 
-    if [ "${publicGithubProject}" != "n" ]; then
+    if [ "${additionalDocumentation}" != "n" || "${additionalDocumentation}" != "N" ]; then
 
         if [ ! -d "./docs" ]; then
 
@@ -66,14 +66,14 @@ function setup_git()
 
         fi
 
-        githubProjectURL=""
+    fi
 
-        read -p "If your project has a Public Github URL enter it now: " githubProjectURL
+    githubProjectURL=""
 
-        if [ "${githubProjectURL}" != "" ]; then
-            project_url=$githubProjectURL
-        fi
+    read -p "If your project has a Public Github URL enter it now: " githubProjectURL
 
+    if [ "${githubProjectURL}" != "" ]; then
+        project_url=$githubProjectURL
     fi
 
 }
