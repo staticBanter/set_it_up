@@ -59,6 +59,12 @@ setup_project_webpack()
 
     directories="js/bundle js/module web/src/js"
 
+    if [ -e "./tsconfig.json" ]; then
+
+        sed s/"\"outDir\": \"js\""/"\"outDir\": \"js\/module\""/ -i "./tsconfig.json"
+
+    fi
+
     for directory in $directories;
     do
 
