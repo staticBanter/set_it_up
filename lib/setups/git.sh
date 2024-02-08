@@ -52,7 +52,7 @@ function setup_git()
 
     read -p "Would you like to Add Additional Documentation to your project? (Y/n)" additionalDocumentation
 
-    if [ "${additionalDocumentation}" != "n" || "${additionalDocumentation}" != "N" ]; then
+    if [[ "${additionalDocumentation}" != "n" && "${additionalDocumentation}" != "N" ]]; then
 
         if [ ! -d "./docs" ]; then
 
