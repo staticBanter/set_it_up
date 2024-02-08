@@ -86,7 +86,7 @@ export default (env) => [
         name: "web",
         entry: {
             site: {
-                import: "./main.js"
+                import: "./js/main.js"
             }
         },
         devServer: {
@@ -113,7 +113,7 @@ export default (env) => [
         },
         output: {
             path: path.resolve('web/public'),
-            filename: "main.js",
+            filename: "./js/main.js",
             module: true,
             libraryTarget: 'module',
             crossOriginLoading: "anonymous",

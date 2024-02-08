@@ -57,13 +57,13 @@ setup_project_webpack()
 
     mv "./public/" "./web/public/"
 
-    directories="js/bundle js/module web/src/js"
-
     if [ -e "./tsconfig.json" ]; then
 
         sed s/"\"outDir\": \"js\""/"\"outDir\": \"js\/module\""/ -i "./tsconfig.json"
 
     fi
+
+    directories="js/bundle js/module web/src/js"
 
     for directory in $directories;
     do
@@ -76,9 +76,15 @@ setup_project_webpack()
 
     done;
 
-    cd "./web/src/js"
+    cd "./js/module"
 
-    > "main.js"
+    > "$project_name.js"
+
+    cd "../../web/src/js"
+
+    echo "'use strict';
+
+import $project_name from \"../../../js/bundle/$project_name.bundle.js\";" > "main.js"
 
     cd "../"
 
