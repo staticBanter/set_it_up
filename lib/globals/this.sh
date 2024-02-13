@@ -2,7 +2,7 @@
 
 this_program_name="setItUp"
 this_program_dirName="set_it_up"
-this_program_version="0.1.11"
+this_program_version="0.1.12"
 
 this_program_cache_dirName="cache"
 this_program_cache_dirPath="$this_script_path/$this_program_cache_dirName"

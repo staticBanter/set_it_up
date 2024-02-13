@@ -92,7 +92,7 @@ setup_frontEnd()
 
     fi
 
-    directories="web/storage/icons web/storage/screenshots src"
+    directories="web/storage/icons web/storage/screenshots"
 
     for directory in $directories;
     do
@@ -102,15 +102,6 @@ setup_frontEnd()
         fi
 
     done;
-
-    if [ -d "./ts" ]; then
-        mv -n "./ts" "./src"
-
-        if [ -e "./tsconfig.json" ]; then
-            sed s/"\"rootDir\": \"ts\""/"\"rootDir\": \"src\/ts\""/ -i "./tsconfig.json"
-        fi
-
-    fi
 
     if [ -d "./scss" ]; then
 
