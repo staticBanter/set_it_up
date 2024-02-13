@@ -11,7 +11,11 @@ setup_sass()
         return;
     fi
 
-    npm install --save-dev sass
+    if [ $this_option_package_files == true ]; then
+        npm install --save-dev sass
+    else
+        npm install --save-dev --package-lock-only --no-package-lock sass
+    fi
 
     sed -i s/"\"scripts\": {"/"\"scripts\": {\n    \"sass-build\": \"sass .\/scss\/$project_name.scss:.\/css\/$project_name.css --style=compressed --no-source-map\",\n    \"sass-watch\": \"sass .\/scss\/$project_name.scss:.\/css\/$project_name.css --style=compressed --no-source-map --watch --update\","/ "./package.json"
 

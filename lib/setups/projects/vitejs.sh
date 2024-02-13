@@ -98,7 +98,9 @@ setup_project_vitejs()
 
     cd ./$project_name
 
-    npm install
+    if [ $this_option_package_files == true ]; then
+        npm install
+    fi
 
     case $vite_project_template in
 

@@ -20,7 +20,15 @@ function copyOrDownloadLicense()
 
             if [ "${downloadLicense}" != "n" ]; then
 
-                curl "$githubLicenseApiUrl/$project_license" | jq -r ".body" > "${licenseDirectory}/${project_license}"
+                if [ $this_option_external_files == true ]; then
+
+                    curl "$githubLicenseApiUrl/$project_license" | jq -r ".body" > "${licenseDirectory}/${project_license}"
+
+                else
+
+                    > "${licenseDirectory}/${project_license}"
+
+                fi
 
             fi
 

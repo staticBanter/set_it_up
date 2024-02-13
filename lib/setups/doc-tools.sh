@@ -10,7 +10,11 @@ setup_docTools()
         return
     fi
 
-    npm install --save-dev jsdoc
+    if [ $this_option_package_files == true ]; then
+        npm install --save-dev jsdoc
+    else
+        npm install --save-dev --package-lock-only --no-package-lock jsdoc
+    fi
 
     if [ ! -e "./jsdoc.config.json" ]; then
         if [ -a "$this_program_cache_dirPath/project_template_files/jsdoc.config.json" ]; then

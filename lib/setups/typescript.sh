@@ -29,7 +29,11 @@ function setup_typescript()
     if ! command tsc -v &> /dev/null
     then
 
-        npm install --save-dev tsc
+        if [ $this_option_package_files == true ]; then
+            npm install --save-dev tsc
+        else
+            npm install --save-dev --package-lock-only --no-package-lock tsc
+        fi
 
         sed -i s/"\"scripts\": {"/"\"scripts\": {\n    \"tsc-init\":\"tsc --init\""/ "./package.json"
 

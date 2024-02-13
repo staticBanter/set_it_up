@@ -5,7 +5,11 @@ setup_project_webpack()
 
     setup_project_vanillajs
 
-    npm install --save-dev webpack webpack-cli webpack-dev-server copy-webpack-plugin terser-webpack-plugin
+    if [ $this_option_package_files == true ]; then
+        npm install --save-dev webpack webpack-cli webpack-dev-server copy-webpack-plugin terser-webpack-plugin
+    else
+        npm install --save-dev --package-lock-only --no-package-lock webpack webpack-cli webpack-dev-server copy-webpack-plugin terser-webpack-plugin
+    fi
 
     sed -i s/"\"scripts\": {"/"\"scripts\": {\n    \"webpack-build\": \"webpack build \-\-profile \-\-json\=webpack.profile.json \-\-env production \-\-config webpack.config.js\","/ "./package.json"
 

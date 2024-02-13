@@ -11,7 +11,11 @@ setup_testTools()
         return;
     fi
 
-    npm install --save-dev mocha chai c8
+    if [ $this_option_package_files == true ]; then
+        npm install --save-dev mocha chai c8
+    else
+        npm install --save-dev --package-lock-only --no-package-lock mocha chai c8
+    fi
 
     sed -i s/'"test": "echo \\"Error: no test specified\\" && exit 1",'// "./package.json"
 

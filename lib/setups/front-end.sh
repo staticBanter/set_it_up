@@ -16,7 +16,12 @@ setup_frontEnd_framework()
             select frontendFramework in $frontendFrameworks;
             do
 
-                npm install "${frontendFramework}"
+                if [ $this_option_package_files == true ]; then
+                    npm install "${frontendFramework}"
+                else
+                    npm install --save-dev --package-lock-only --no-package-lock "${frontendFramework}"
+                fi
+
                 break;
             done
 
