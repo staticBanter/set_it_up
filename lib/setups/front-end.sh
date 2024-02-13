@@ -108,7 +108,11 @@ setup_frontEnd()
     fi
 
     if [ -d "./scss" ]; then
-        mv -n "./scss" "./src"
+
+        sed s/"\"sass-build\": \"sass .\/scss\/$project_name.scss:.\/css\/$project_name.css"/"\"sass-build\": \"sass .\/scss\/$project_name.scss:.\/web\/\/prod\/css\/$project_name.css"/  -i  "./package.json"
+
+        sed s/"\"sass-watch\": \"sass .\/scss\/$project_name.scss:.\/css\/$project_name.css"/"\"sass-watch\": \"sass .\/scss\/$project_name.scss:.\/web\/\/prod\/css\/$project_name.css"/ -i "./package.json"
+
     fi
 
     if [ -d "./js" ]; then

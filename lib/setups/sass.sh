@@ -13,7 +13,7 @@ setup_sass()
 
     npm install --save-dev sass
 
-    sed -i s/"\"scripts\": {"/"\"scripts\": {\n    \"sass-build\": \"sass site\/src\/main.scss:site\/prod\/main.css --style=compressed --no-source-map\",\n    \"sass-watch\": \"sass site\/src\/main.scss:site\/prod\/main.css --style=compressed --no-source-map --watch --update\","/ "./package.json"
+    sed -i s/"\"scripts\": {"/"\"scripts\": {\n    \"sass-build\": \"sass .\/scss\/$project_name.scss:.\/css\/$project_name.css --style=compressed --no-source-map\",\n    \"sass-watch\": \"sass .\/scss\/$project_name.scss:.\/css\/$project_name.css --style=compressed --no-source-map --watch --update\","/ "./package.json"
 
     sed -i s/"\"production\": \""/"\"production\": \"npm run sass-build \&\& "/ "./package.json"
 
