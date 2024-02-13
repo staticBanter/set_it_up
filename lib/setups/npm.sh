@@ -3,7 +3,7 @@
 setup_npm()
 {
 
-    read -p "Would you like to initialize NPM? (Y/n)" project_requires_npm
+    read -p "Would you like to Initialize NPM? (Y/n)" project_requires_npm
 
     if [[ "${project_requires_npm}" == "n" || "${project_requires_npm}" == "N" ]]; then
         return;
@@ -11,13 +11,13 @@ setup_npm()
 
     isProjectScoped=""
 
-    read -p "Would you like your project to be scoped? (y/N)" isProjectScoped
+    read -p "Would you like your project to be Scoped? (y/N)" isProjectScoped
 
     if [[ "${isProjectScoped}" == "y" || "${isProjectScoped}" == "Y" ]]; then
 
         customScope=""
 
-        read -p "Enter your NPM repository scope name (default: @$client_name):" customScope
+        read -p "Enter your NPM Repository Scope Name (default: @$client_name):" customScope
 
         if [ "${customScope}" == "" ]; then
             customScope="@$client_name"

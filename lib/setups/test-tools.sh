@@ -5,7 +5,7 @@ setup_testTools()
 
 
 
-    read -p "Will you using Test Driven Development or requirer testing tools for your project? (Y/n)" project_requires_testingTools
+    read -p "Will you using Test Driven Development or Require Testing Tools for your project? (Y/n)" project_requires_testingTools
 
     if [[ "${project_requires_testingTools}" == "n" || "${project_requires_testingTools}" == "N" ]]; then
         return;

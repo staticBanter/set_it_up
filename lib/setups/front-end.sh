@@ -54,7 +54,7 @@ setup_frontEnd()
 
     requires_frontEnd=""
 
-    read -p "Will your program have a front end user interface or be a web-application? (Y/n)"
+    read -p "Will your program have a Front End User Interface or be a Web-Application? (Y/n)"
 
     if [[ "${requires_frontEnd}" == "n" ||  "${requires_frontEnd}" == "N" ]]; then
         return;

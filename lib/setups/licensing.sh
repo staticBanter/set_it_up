@@ -48,7 +48,7 @@ function setup_licensing()
 {
     licensingProject=""
 
-    read -p "Will you be licensing your project? (Y/n)" licensingProject
+    read -p "Will you be Licensing your project? (Y/n)" licensingProject
 
     if [[ "${licensingProject}" == "n" || "${licensingProject}" == "N" ]]; then
         return 0;

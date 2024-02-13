@@ -4,7 +4,7 @@ setup_docTools()
 {
     requires_docTools=""
 
-    read -p "Will you be using any assistive code documentation tooling? (Y/n)" requires_docTools
+    read -p "Will you be using Code Based Generative Documentation Tooling? (Y/n)" requires_docTools
 
     if [[ "${requires_docTools}" == "n" || "${requires_docTools}" == "N" ]]; then
         return
